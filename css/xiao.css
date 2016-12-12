@@ -1,0 +1,419 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Microsoft Yahei';
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+a {
+    font-style: normal;
+    text-decoration: none;
+}
+
+:focus {
+    outline: 0;
+}
+
+body {
+    line-height: 1;
+    color: black;
+    background: white;
+}
+
+i {
+    font-style: normal;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+caption,
+th,
+td {
+    text-align: left;
+    font-weight: normal;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+}
+
+blockquote,
+q {
+    quotes: "" "";
+}
+
+.clear:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.p_rel {
+    position: relative;
+}
+
+.p_abs {
+    position: absolute;
+}
+
+.f_left {
+    float: left;
+}
+
+.f_right {
+    float: right;
+}
+
+.d_none {
+    display: none;
+}
+
+.m_center {
+    margin: 0 auto;
+}
+
+.trans {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+
+/*下拉框*/
+
+.selectBox {
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #dadada;
+    font-family: "Microsoft Yahei";
+    font-size: 14px;
+    /*perspective: 100px;*/
+    /*perspective-origin: 50% 32px;*/
+}
+
+.selectBox p {
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.selectBox i {
+    float: right;
+    padding-right: 5px;
+    font-size: 12px;
+}
+
+.selectBox .selectItems {
+    width: 100%;
+    border: 1px solid #dadada;
+    border-top: 0;
+    left: -1px;
+    top: 31px;
+    z-index: 2;
+    background: #fff;
+}
+
+.selectBox .selectItems li {
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.selectBox .selectItems li:not(:last-child) {
+    border-bottom: 1px solid #dadada;
+}
+
+
+/*Radio按钮*/
+
+.radioBtn {
+    background-color: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: 20px;
+    margin-right: 5px;
+    position: relative;
+    width: 20px;
+    top: 0;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+.radioBtn:after {
+    background-color: #fff;
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 10px;
+    left: 5px;
+    position: relative;
+    top: 5px;
+    width: 10px;
+    border: none;
+}
+
+.radioBtn:checked:after {
+    background-color: #3db5ff;
+}
+
+
+/*checkbox勾选*/
+
+.icon-ckBox {
+    width: 20px;
+    height: 20px;
+    border: 1px dotted #dadada;
+    background: #ddd;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+}
+
+.icon-ckBox:before {
+    content: "\e615";
+    vertical-align: middle;
+}
+
+.icon-ckBox:checked {
+    background: #fff;
+}
+
+.icon-ckBox:checked:before {
+    color: lawngreen
+}
+
+
+/*瀑布流*/
+
+.xWaterfall {
+    top: 0;
+    left: 0;
+}
+
+.xWaterfall img {
+    width: 100%;
+}
+
+
+/*弹窗样式*/
+
+.xAlert {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9;
+    display: none;
+}
+
+.xAlert .mask {
+    background: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.xAlert .icon-close {
+    float: right;
+    position: relative;
+    top: -1px;
+    cursor: pointer;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+}
+
+.xAlert .xAlert_infoBox {
+    width: 360px;
+    font-size: 14px;
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #999;
+    border-radius: 5px;
+    position: absolute;
+    font-family: "Microsoft Yahei"
+}
+
+.xAlert .xAlert_infoBox header {
+    background: #0094ff;
+    color: #fff;
+    /*margin-bottom: 10px;*/
+    padding: 3px 10px;
+    text-align: left;
+    border-bottom: 1px solid #999;
+    font-size: 18px;
+    line-height: 30px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.xAlert .xAlert_infoBox .xAlert_body {
+    padding: 20px 10px 50px 10px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.xAlert .xAlert_infoBox .xAlert_footer {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.xAlert_btn {
+    border: 0;
+    padding: 6px 20px;
+    background: #0094ff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.xAlert .xAlert_footer .xAlert_btn:not(:last-child) {
+    margin-right: 10px;
+}
+
+@-webkit-keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -50%, 0);
+        transform: translate3d(0, -50%, 0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -50%, 0);
+        transform: translate3d(0, -50%, 0);
+    }
+}
+
+.animate-fadeOut {
+    animation: fadeOut 0.4s both;
+    -webkit-animation: fadeOut 0.4s both;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.4s cubic-bezier(0.36, 1.1, 0.2, 1.2) both;
+    -webkit-animation: fadeIn 0.4s cubic-bezier(0.36, 1.1, 0.2, 1.2) both;
+}

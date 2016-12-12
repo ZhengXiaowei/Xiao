@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <link rel="stylesheet" type="text/css" href="css/fonts/font.css" />
+    <link rel="stylesheet" type="text/css" href="css/xiao.css" />
+    <style>
+        .testWaterfall li {
+            width: 200px;
+            /*padding: 20px;*/
+            border: 1px solid #d5d5d5;
+        }
+        
+        .test2w li {
+            width: 160px;
+        }
+    </style>
+</head>
+
+<body>
+    <section style="margin:20px;">
+        <div class="test" style="margin-bottom:10px">
+            <select name="test" id="test" />
+            <option value="0">文本1</option>
+            <option value="1">文本2</option>
+            <option value="2">文本3</option>
+            </select>
+        </div>
+        <div class="test2">
+            <select name="aaa" id="aaa">
+            <option value="0">aaaa</option>
+            <option value="1">bbb</option>
+            <option value="2">ccc</option>
+            <option value="3">ddd</option>
+            <option value="4">eee</option>
+        </select>
+        </div>
+
+        <div class="testRadio" style="margin:20px">
+            <label for="rr">
+            <input type="radio" name="rr" id="rr" />按钮1
+            </label>
+            <label for="rr1">
+            <input type="radio" name="rr" id="rr1" />按钮2
+            </label>
+        </div>
+        <div class="testCheck" style="margin:20px">
+            <label for="cc">
+                <input type="checkbox" name="cc" id="cc"/>勾选1
+            </label>
+            <label for="cc2">
+                <input type="checkbox" name="cc2" id="cc2"/>勾选2
+            </label>
+        </div>
+        <div class="testAlert" style="margin:20px">
+            <button type="button" class="testBtn xAlert_btn">点我可查看弹窗</button>
+        </div>
+        <div class="testWaterfall" style="margin:20px 0">
+            <ul>
+                <li><img src="imgs/0.jpg" alt=""></li>
+                <li><img src="imgs/9.jpg" alt=""></li>
+                <li><img src="imgs/14.jpg" alt=""></li>
+                <li><img src="imgs/10.jpg" alt=""></li>
+                <li><img src="imgs/8.jpg" alt=""></li>
+                <li><img src="imgs/5.jpg" alt=""></li>
+                <li><img src="imgs/7.jpg" alt=""></li>
+                <li><img src="imgs/11.jpg" alt=""></li>
+                <li><img src="imgs/12.jpg" alt=""></li>
+                <li><img src="imgs/13.jpg" alt=""></li>
+                <li><img src="imgs/5.jpg" alt=""></li>
+                <li><img src="imgs/2.jpg" alt=""></li>
+                <li><img src="imgs/8.jpg" alt=""></li>
+                <li><img src="imgs/5.jpg" alt=""></li>
+                <li><img src="imgs/7.jpg" alt=""></li>
+                <li><img src="imgs/11.jpg" alt=""></li>
+                <li><img src="imgs/8.jpg" alt=""></li>
+                <li><img src="imgs/5.jpg" alt=""></li>
+                <li><img src="imgs/7.jpg" alt=""></li>
+                <li><img src="imgs/11.jpg" alt=""></li>
+            </ul>
+        </div>
+    </section>
+</body>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/xiao.js"></script>
+<script>
+    $(function() {
+
+        //瀑布流
+        $('.testWaterfall').xWaterFall({
+            padding: '0',
+            borderWidth: '0'
+        });
+        //下拉框,ie9以下有问题
+        $('.test').xSelect({
+            itemHoverBgColor: '#0094ff',
+            itemHoverTextColor: '#fff',
+            classname: 'aaa' //如果没有注明classname的话 那么里头的属性 将会出现通用的情况 也就是 多个select都用的是一个属性
+        });
+        $('.test2').xSelect({
+            width: '120',
+            classname: 'bbb'
+        });
+        //单选框
+        $('.testRadio').xRadio({
+            size: '20',
+            vertical: false
+        });
+        //多选框
+        $('.testCheck').xCheckBox({
+            checkColor: '#000',
+            initBgColor: '#fff',
+            borderStyle: 'dashed',
+            isAnimate: false,
+            vertical: true,
+            size: '20'
+                // borderRadius: '50%'
+        });
+        //弹窗
+        var btn = $('.testBtn');
+        $(btn).click(function() {
+            Xiao.xAlert({
+                classname: 'aaa',
+                btn2Text: '取消',
+                btn1Click: function() {
+                    Xiao.xAlert({
+                        classname: 'bbb',
+                        width: '500',
+                        title: '又一个弹出框',
+                        btn1Text: '关闭',
+                        html: '<p>又打开了一个</p>',
+                        btn1Click: function() {
+                            $(this).parents('.bbb').remove(); //移除节点达到关闭效果
+                        }
+                    })
+                },
+                btn2Click: function() {
+                    $(this).parents('.aaa').remove();
+                },
+                title: '我是一个提示框',
+                // isMove: true
+            });
+        })
+    })
+</script>
+
+</html>
